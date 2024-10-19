@@ -1,3 +1,4 @@
+
 body{
     width: 100vw;
     height: 100vh;
@@ -37,7 +38,7 @@ body{
     initial-value: 0deg;
     inherits: false;
 }
-.card::after, .card::before{
+.border{
     --angle: 0deg;
     content: '';
     position: absolute;
@@ -53,7 +54,7 @@ body{
     border-radius: 10px;
     background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545); /*gradient*/
 }
-.card::before{
+.blur{
     filter:blur(1.5rem);
     opacity: 0.5;
 }
