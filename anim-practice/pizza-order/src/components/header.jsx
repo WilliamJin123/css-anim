@@ -1,5 +1,5 @@
-
-
+import { defaultVariant } from "./animations"
+import { motion } from "framer-motion"
 export default function Header(){
     return(
         <header>
@@ -15,9 +15,23 @@ export default function Header(){
           />
         </svg>
       </div>
-      <div className="title">
+      <motion.div className="title"
+        variants={defaultVariant}
+        initial={{
+          y:-250,
+
+        }}
+        animate={{
+          y:-10,
+
+        }}
+        transition={{
+          ...defaultVariant.transition,
+          
+        }}
+      >
         <h1>Pizza Joint</h1>
-      </div>
+      </motion.div>
     </header>
     )
 }
