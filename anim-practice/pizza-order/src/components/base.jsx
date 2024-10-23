@@ -19,8 +19,10 @@ export default function Base({addBase, pizza}){
     const bases = ['Classic', 'Thin & Crispy', 'Thick Crust']
     const basesList = bases.map((base, index) => (
         <motion.li key={index} onClick={() => addBase(base) } className={pizza.base === base? 'active' : ''}
+            
             variants={listItemVariant}
             whileHover="whileHover"
+            
         >{base}</motion.li>
     ))
     return(
@@ -33,9 +35,19 @@ export default function Base({addBase, pizza}){
                 delay: 0.5}}
         >
             <h3>Step 1: Choose Your Base</h3>
-            <ul>
+            <motion.ul
+                variants={listItemVariant}
+                transition={{
+                    type:'spring',
+                    stiffness:50,
+                    delay:0,
+                    mass:0.4,
+                    damping: 8,
+                    staggerChildren:0.4,
+                }}
+            >
                 {basesList}
-            </ul>
+            </motion.ul>
             {pizza.base && (
                 <motion.div className="next"
                     variants={{...nextVariant, ...defaultVariant}}

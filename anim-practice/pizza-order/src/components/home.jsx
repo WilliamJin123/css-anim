@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion";
-import { buttonVariant } from "./animations";
+import { buttonVariant, homePageVariant } from "./animations";
 export default function Home(){
     return(
         <div className="home page">
@@ -24,19 +24,12 @@ export default function Home(){
             >Welcome to the Pizza Joint </motion.h2>
             <Link to="/base">
                 <motion.button
-                    variants={buttonVariant}
+                    variants={{...buttonVariant, ...homePageVariant}}
                     initial={{
-                        opacity:0
+                        opacity:0,
+                        scale:0.1,
                     }}
-                    animate={{
-                        scale:1.25,
-                        transition:{
-                            duration:1,
-                            ease: [0.2, 0.79, 0.59, 0.95],
-                            delay:0.1,
-                        },
-                        opacity:0.7
-                    }}
+                    animate="visible"
                     
                     whileHover="whileHover"
                     

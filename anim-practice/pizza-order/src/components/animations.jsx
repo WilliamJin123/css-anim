@@ -19,6 +19,7 @@ export const childVariant = {
         }
     }
 }
+
 export const pageVariant ={
     initial: {
         opacity: 0,
@@ -41,14 +42,33 @@ export const pageVariant ={
 
 
 export const listItemVariant ={
+    
     whileHover:{
         scale:1.3,
         color:'#f8e112',
         originX:0
-    }
+    },
+    initial:{
+        x:'100vw'
+    },
+    animation:{
+        x:0,
+        
+    },
+    // transition:{
+        // type:'spring',
+        // stiffness:50,
+        // delay:0,
+        // mass:0.4,
+        // damping: 8,
+        // staggerChildren:0.4,
+    // }
+   
 }
 export const buttonVariant = {
     whileHover:{
+        // scale:[1.25,1.35,1.25],
+        scale:1.15,
         y:-5,
         backgroundColor:'var(--white)',
         color:'#58066F',
@@ -56,6 +76,28 @@ export const buttonVariant = {
         transition:{
             duration: 0.3,
             ease:'easeInOut',
+            scale:{
+                repeat:Infinity, 
+                repeatType:'reverse',
+                // times:[0,0.5,1],
+                duration:0.6,
+                delay:1,
+            }
         }
+    }
+}
+export const homePageVariant ={
+    visible: {
+       
+        
+        scale:1,
+        transition:{
+            duration:1,
+            ease: [0.2, 0.79, 0.59, 0.95],
+            delay:0.1,
+            
+        },
+        opacity:0.7
+
     }
 }
