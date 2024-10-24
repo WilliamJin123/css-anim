@@ -1,27 +1,31 @@
-import { motion } from "framer-motion"
-import { pageVariant, childVariant} from "./animations"
+import { motion, AnimatePresence} from "framer-motion"
+import { pageVariant, childVariant, containerVariant} from "./animations"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-export default function Order({ pizza }) {
-    const [showTitle, setShowTitle] = useState(true)
+export default function Order({ pizza, setShowModal }) {
+    // const [showTitle, setShowTitle] = useState(true)
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowTitle(false);
-        }, 4000);
+        const timer= setTimeout(()=>{
+            setShowModal(true)
+        }, 4000)
+        
+        return () => clearTimeout(timer)
+    })
+    
 
-    return () => clearTimeout(timer);
-    }, [])
+    return(
 
         <motion.div className="order page"
-            variants={pageVariant}
+            variants={{...pageVariant, ...containerVariant}}
             initial="initial"
             animate="animation"
+            exit="exit"
         >
-            {showTitle && (
-                <h2>Thank you for the order</h2>
-            )}
+            
+            <h2>Thank you for the order</h2>
+            
             
             {pizza.toppings.length > 0?
                 <>

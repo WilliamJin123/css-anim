@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
-import { pageVariant, listItemVariant, buttonVariant, defaultVariant} from "./animations"
+import { pageVariant, listItemVariant, buttonVariant, defaultVariant, containerVariant} from "./animations"
 
 
 const nextVariant ={
@@ -27,12 +27,13 @@ export default function Base({addBase, pizza}){
     ))
     return(
         <motion.div className="bases page"
-            variants={{...pageVariant, ...defaultVariant}}
+            variants={{...pageVariant, ...defaultVariant, ...containerVariant}}
             initial="initial"
             animate="animation"
             transition={{
                 ...defaultVariant.transition,
-                delay: 0.5}}
+                }}
+            exit="exit"
         >
             <h3>Step 1: Choose Your Base</h3>
             <motion.ul
@@ -58,6 +59,7 @@ export default function Base({addBase, pizza}){
                     <motion.button
                         variants={buttonVariant}
                         whileHover="whileHover"
+                        whileTap="whileTap"
                     >Next</motion.button>
                 </Link>
                 </motion.div>

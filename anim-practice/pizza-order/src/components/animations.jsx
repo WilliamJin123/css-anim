@@ -66,6 +66,12 @@ export const listItemVariant ={
    
 }
 export const buttonVariant = {
+    initial: {
+        opacity: 0,
+        scale: 0.1,
+        backgroundColor: 'transparent', // or whatever your default color is
+        color: 'var(--white)', // Default text color
+    },
     whileHover:{
         // scale:[1.25,1.35,1.25],
         scale:1.15,
@@ -83,13 +89,21 @@ export const buttonVariant = {
                 duration:0.6,
                 delay:1,
             }
+           
+        }
+    },
+    whileTap:{
+        scale:1.2,
+        transition:{
+            duration: 0.3,
+            ease:'easeInOut',
         }
     }
 }
 export const homePageVariant ={
     visible: {
-       
         
+        opacity:0.7,
         scale:1,
         transition:{
             duration:1,
@@ -97,7 +111,48 @@ export const homePageVariant ={
             delay:0.1,
             
         },
-        opacity:0.7
+        
 
+    }
+}
+
+export const containerVariant = {
+    hidden:{
+        opacity:0.3,
+        color:'var(--red)',
+        rotateY:180,
+    },
+    visible:{
+        scale:1,
+        color:'var(--white)',
+        opacity: 1,
+        rotateY:0,
+        transition:{
+            duration:1,
+            ease: [0.2, 0.79, 0.59, 0.95],
+            delay:0.2,
+        },
+        when:'beforeChildren'
+    },
+    exit: {
+        x:'-100vw',
+        opacity:0,
+        transition:{
+            duration:0.5,
+            ease: 'easeOut'
+        },
+        when:'afterChildren',
+    }
+}
+
+export const backdropVariant = {
+    visible:{
+        opacity: 1,
+        transition:{
+            duration:1
+        }
+    },
+    hidden:{
+        opacity:0,
     }
 }

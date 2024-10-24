@@ -1,30 +1,23 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion";
-import { buttonVariant, homePageVariant } from "./animations";
+import { buttonVariant, containerVariant, homePageVariant } from "./animations";
 export default function Home(){
+
+
     return(
-        <div className="home page">
+        <motion.div className="home page"
+            variants={containerVariant}
+            exit="exit"
+
+        >
             <motion.h2
-                initial={{
-                    opacity:0.3,
-                    color:'var(--red)',
-                    rotateY:180,
-                }}
-                animate={{
-                    scale:2,
-                    color:'var(--white)',
-                    opacity: 1,
-                    rotateY:0,
-                }}
-                transition={{
-                    duration:5,
-                    ease: [0.2, 0.79, 0.59, 0.95],
-                    delay:0.1,
-                }}
+            variants={{...containerVariant}}
+            initial="hidden"
+            animate="visible"
             >Welcome to the Pizza Joint </motion.h2>
             <Link to="/base">
                 <motion.button
-                    variants={{...buttonVariant, ...homePageVariant}}
+                    variants={{...containerVariant, ...buttonVariant, ...homePageVariant,}}
                     initial={{
                         opacity:0,
                         scale:0.1,
@@ -32,12 +25,12 @@ export default function Home(){
                     animate="visible"
                     
                     whileHover="whileHover"
-                    
+                    whileTap="whileTap"
                     
                 >
                     Create Your Pizza
                 </motion.button>
             </Link>
-        </div>
+        </motion.div>
     )
 }
