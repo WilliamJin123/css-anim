@@ -146,3 +146,11 @@ li.active::before{
   font-size: 1.5rem;
   border-width: 2px;
 }
+
+.loader{
+  width:10px;
+  height:10px;
+  margin:40px auto;
+  border-radius: 50%;
+  background-color: var(--white);
+}

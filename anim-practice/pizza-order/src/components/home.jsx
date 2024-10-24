@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion";
 import { buttonVariant, containerVariant, homePageVariant } from "./animations";
+import { Loader } from "./loader";
+
 export default function Home(){
 
 
@@ -31,6 +33,7 @@ export default function Home(){
                     Create Your Pizza
                 </motion.button>
             </Link>
+            <Loader />
         </motion.div>
     )
 }

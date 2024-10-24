@@ -156,3 +156,56 @@ export const backdropVariant = {
         opacity:0,
     }
 }
+
+export const svgVariant = {
+    initial: {rotate: -180},
+    animate:{
+        rotate:0,
+        transition:{
+            duration:1,
+
+        }
+    }
+}
+export const pathVariant = {
+    initial:{
+        opacity:0,
+        pathLength: 0, //draws it
+    },
+    animate:{
+        opacity:1,
+        pathLength:1,
+        transition:{
+            duration:2,
+            ease:"easeInOut"
+        }
+    }
+}
+
+export const loaderVariant = {
+    animationOne:{
+        x:[-20, 20],
+        y:[0, -30],
+        transition:{
+            x:{repeat:Infinity,
+                repeatType:'reverse', 
+                duration:0.5},
+            y:{repeat:Infinity,
+                repeatType:'reverse',
+                duration:0.25,
+                ease:'easeOut'},
+        }
+    },
+    animationTwo:{
+        y:[0,-40],
+        x:0,
+        transition:{
+            y:{
+                repeat:Infinity,
+                repeatType:'reverse',
+                ease:'easeOut',
+                duration:0.25
+            }
+        }
+    }
+}
