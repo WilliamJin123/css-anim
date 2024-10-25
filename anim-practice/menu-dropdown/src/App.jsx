@@ -1,36 +1,58 @@
 import "./App.css"
 import { useState } from "react";
-import {motion} from "framer-motion"
-export default function App(){
+import { motion, AnimatePresence } from "framer-motion"
+import { buttonVariants, itemVariants, listVariants, svgVariants } from "./variants";
+export default function App() {
   const [open, setOpen] = useState(false)
   const itemList = [];
-  for(let i = 1; i<=5; i++){
+  for (let i = 1; i <= 5; i++) {
     itemList.push(`Item ${i}`)
   }
   const itemListDisplay = itemList.map((item, index) => (
-    <li key={index}>
+    <motion.li key={index} variants={itemVariants}>
       {item}
-    </li>
+    </motion.li>
   ))
   return (
     <motion.div className='main-div'
       initial={open}
-      animate={open? "open" : "closed"}
+      animate={open ? "open" : "closed"}
     >
-      <button className='main-button' onClick={() => setOpen(!open)}
-      
-      >Menu
-      <div className='svg-div'>
-        <svg width="15" height="15" viewBox="0 0 20 20">
-            <path d="M0 7 L 20 7 L 10 16" />
-          </svg>
-      </div>
-      
-      </button>
+      <motion.button className='main-button' onClick={() => setOpen(!open)}
+        variants={buttonVariants}
+        whileTap="whileTap"
 
-      <ul className={`item-list ${open? '' : 'none'}`}>
-        {itemListDisplay}
-      </ul>
+      >Menu
+
+        <div className='svg-div'>
+          <motion.svg width="15" height="15" viewBox="0 0 20 20"
+            variants={svgVariants}
+            transition="transition"
+          >
+            <path d="M0 7 L 20 7 L 10 16" />
+          </motion.svg>
+        </div>
+
+      </motion.button>
+      <AnimatePresence
+        
+      >
+        {open && (<motion.ul 
+          variants={listVariants}
+          initial="closed"
+          animate="open"
+          
+          exit="closed"
+          className={`item-list`}
+        >
+          {itemListDisplay}
+        </motion.ul>
+        )}
+        
+
+      </AnimatePresence>
+
+
     </motion.div>
   )
 }
