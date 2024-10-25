@@ -5,11 +5,11 @@ import { buttonVariants, itemVariants, listVariants, svgVariants } from "./varia
 export default function App() {
   const [open, setOpen] = useState(false)
   const itemList = [];
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 6; i++) {
     itemList.push(`Item ${i}`)
   }
   const itemListDisplay = itemList.map((item, index) => (
-    <motion.li key={index} variants={itemVariants}>
+    <motion.li key={index} variants={itemVariants} custom={index}>
       {item}
     </motion.li>
   ))

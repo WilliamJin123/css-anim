@@ -29,7 +29,7 @@ export const listVariants={
             bounce: 0,
             duration: 0.7,
             when:"beforeChildren",
-            staggerChildren: 0.07
+            // staggerChildren: 0.07
           },
     },
     closed:{
@@ -48,7 +48,7 @@ export const itemVariants={
         y:30,
         
     },
-    open:{
+    open: i =>({
         scale:1,
         opacity:1,
         y:0,
@@ -57,7 +57,7 @@ export const itemVariants={
             type:"spring",
             bounce: 0.5,
             stiffness:200,
-            
+            delay: i%2=== 0? i*0.07 : 0.5 + i*0.07
         }
-    }
+    })
 }

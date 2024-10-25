@@ -33,7 +33,7 @@ body {
 
 .main-div{
   width: 50%; 
-  margin: 20vh 25%;
+  margin: 5vh 25%;
   display: flex;
   justify-content: center;
   flex-direction: column;
