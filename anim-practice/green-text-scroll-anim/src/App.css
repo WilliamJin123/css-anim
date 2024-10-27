@@ -81,10 +81,11 @@ i{
   position: relative;
   font-size: 1rem;
   border-radius: 7px;
-  height: 100px;
   width: 20%;
   background-color: var(--green);
   
+}.button-on{
+  height: 70px;
 }
 
 

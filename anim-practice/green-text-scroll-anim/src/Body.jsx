@@ -10,6 +10,9 @@ const imgVariants={
 
 export default function Body() {
 
+    const [button, setButton] = useState(false);
+
+
     return (
 
         <div className="main">
@@ -20,15 +23,17 @@ export default function Body() {
                     even though I have no projects to put on it :&#40;&#40;&#40; I want to be able to have a decent array of projects done over the next 4ish months,
                     so that I won't get completely shafted during my coop application cycle
                 </p></Reveal>
-                <motion.button
+                <motion.button 
+                    className={button? 'button-on' : ''}
+                    layout
                     initial={{
-                        height: 0,
                         opacity: 0,
                         y: 75,
                     }}
-                    whileInView={{ opacity: 1, height: '50px', y: 0, }}
+                    whileInView={{ opacity: 1, y: 0, }}
                     transition={{ duration: 0.5, delay: 0.25 }}
                     viewport={{ once: true }}
+                    onViewportEnter={() => setButton(true)}
 
                     onClick={() => document.querySelector(".contact").scrollIntoView({behavior:"smooth"})}
                 >Contact me</motion.button>
