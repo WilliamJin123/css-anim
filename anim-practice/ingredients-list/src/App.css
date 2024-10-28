@@ -1,7 +1,7 @@
 :root{
   --purple: #8855FF;
   --white: #FFFFFF;
-  --gray: #AAAAAA;
+  --gray: #EEEEEE;
 }
 
 html, body{
@@ -36,7 +36,7 @@ html, body{
   padding: 0;
   flex: 1;
   border-radius: 10px 10px 0 0; 
-  background-color: var(--gray);
+  position:relative;
   user-select: none;
 }
 
@@ -44,7 +44,11 @@ html, body{
   width: 50vw;
 }
 
+
 .selected{
+  background-color: var(--gray);
+}
+.display{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,5 +56,13 @@ html, body{
   font-size: 20vw;
   flex-grow: 1;
   
+}
+.underline{
+  position: absolute;
+  bottom:-1px;
+  left:0;
+  height: 5px;
+  width: 100%;
+  background-color: var(--purple);
 }
 
