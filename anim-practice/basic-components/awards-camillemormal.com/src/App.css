@@ -51,15 +51,20 @@ html, body{
 .img-list{
   display: flex;
   gap: 4vmin;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  z-index: 10;
+  will-change: transform, object-position;
 }
 .img-list img{
   width: 40vh;
   height: 50vh;
   object-fit: cover;
-  user-select: none;
   outline: none;
   opacity: 0;
   animation-fill-mode: forwards;
+  will-change: transform, object-position;
 }
 
 
