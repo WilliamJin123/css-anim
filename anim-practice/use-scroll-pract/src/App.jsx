@@ -1,24 +1,29 @@
 import { useState} from 'react'
 
 import './App.css'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 
 export default function App(){
   
   const {scrollYProgress} = useScroll();
+  
 
   const background = useTransform(scrollYProgress, [0, 0.5, 1], ["rgb(86, 1, 245)", "rgb(245, 200, 130)", "rgb(1, 245, 13)"])
+  const springX = useSpring(scrollYProgress, { stiffness: 100, damping: 20 })
   return(
     <div >
-      <motion.div style={{
-          scaleX: scrollYProgress,
+      <motion.div layout style={{
+          scaleX: springX,
           backgroundColor: background,
           transformOrigin: "left",
           position: "sticky",
           top:0,
           width: "100%",
           height: "20px",
-          }}>
+          }}
+          
+          >
+          
       </motion.div>
 
       <div
