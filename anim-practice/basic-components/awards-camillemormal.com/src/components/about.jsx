@@ -7,6 +7,7 @@ export default function About(){
         <div className="about">
             <div>This was based on the awards winning website https://camillemormal.com/</div>
             <div>I could not figure out how to make the scrolling smooth and "drifty"</div>
+            <div>2024-10-31: NVM IT WORKED</div>
         </div>
     )
 }
