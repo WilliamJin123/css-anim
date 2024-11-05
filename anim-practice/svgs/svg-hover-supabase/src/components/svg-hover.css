@@ -1,0 +1,5 @@
+.svg-to-hover{
+    width: 24rem;
+    height: 24rem;
+    transition: all 0.2s ease;
+}
