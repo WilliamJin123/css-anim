@@ -47,8 +47,8 @@ export default function SvgHover() {
                         cy={`${percentY}%`}
 
                     >
-                        {onSvg && <stop offset="0%" stopColor="#10b981" />}
-                        <stop offset={1} stopColor="#404040" />
+                        {onSvg && <stop offset="0%" stopColor="#f04d4d" />}
+                        <stop offset={1} stopColor="#FFFFFF" />
                     </radialGradient>
                 </defs>
                 {/*svg is below */}

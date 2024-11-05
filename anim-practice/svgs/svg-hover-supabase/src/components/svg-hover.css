@@ -6,23 +6,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: lightblue;
 }
 .outer{
-    fill: black;
-    opacity: 0.7;
-   
+    /* fill: rgba(15, 15, 15, 0.5); */
+   fill: black;
 }
 .inner{
     
+    /* fill: rgba(31, 31, 31, 0.5); */
     fill: gray;
 }
 .svg-to-hover{
     width: 24rem;
     height: 24rem;
     transition: all 0.2s ease;
-    
-   
-    stroke: gray;
+
 }
 
 .path{
